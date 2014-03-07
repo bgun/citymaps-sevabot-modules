@@ -20,7 +20,7 @@ def main(args):
         word = "pretentious"
 
     if word == "raja":
-        word = "boss"
+        word = "crybaby"
 
     url = "/definition/" + word
 
@@ -36,7 +36,7 @@ def main(args):
 
     if len(resultItem) > 0:
         print "Definition of: " + word
-        
+
         for result in resultItem.children():
             text = ""
 
