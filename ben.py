@@ -5,4 +5,4 @@ A simple sample module with Skype smileys
 """
 import os
 
-print "(hug)"
+print "(rofl)"
