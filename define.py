@@ -35,6 +35,8 @@ def main(args):
     resultItem = doc.find("#embed_dresultitem_r3")
 
     if len(resultItem) > 0:
+        print "Definition of: " + word
+        
         for result in resultItem.children():
             text = ""
 
