@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__author__ = 'Adam'
+"""
+Shows a random pun
+"""
 
 import sys
 import httplib
