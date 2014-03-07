@@ -14,11 +14,11 @@ def main(args):
     """The program entry point."""
 
     random.seed()
-    defaultCousines = ['Chinese', 'Indian', 'Thai', 'Japanese', 'BBQ', 'Salad', 'Sandwiches', 'Mediterranean', 'Mexican', 'Italian']
+    defaultCuisines = ['Chinese', 'Indian', 'Thai', 'Japanese', 'BBQ', 'Salad', 'Sandwiches', 'Mediterranean', 'Mexican', 'Italian']
 
     if len(args) <= 0:
-        # Pick a random cousine from the default list
-        print defaultCousines[random.randint(0, len(defaultCousines)-1)]
+        # Pick a random cuisines from the default list
+        print defaultCuisines[random.randint(0, len(defaultCuisines)-1)]
         return
 
     cmd = args[0]
@@ -26,13 +26,13 @@ def main(args):
     if cmd == 'help':
         print 'Usage:'
         print '       !lunch'
-        print '       !lunch [comma seperated list of cousines or places]'
+        print '       !lunch [comma seperated list of cuisines or places]'
         return
     else:
-        # Select possible cousine types
-        cousines = cmd.split(",")
-        cousines = filter(None,cousines)
-        print cousines[random.randint(0, len(cousines)-1)]
+        # Select possible cuisines types
+        args = " ".join(args)
+        cuisines = args.split(",")
+        print cuisines[random.randint(0, len(cuisines)-1)]
         return
 
 if __name__ == '__main__':
