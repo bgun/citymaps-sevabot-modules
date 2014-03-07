@@ -29,18 +29,21 @@ def main(args):
         "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
     })
     response = conn.getresponse()
-    
+
     doc = pq(response.read())
 
     resultItem = doc.find("#embed_dresultitem_r3")
 
-    for result in resultItem.children():
-        text = ""
+    if len(resultItem) > 0:
+        for result in resultItem.children():
+            text = ""
 
-        for child in pq(result).children():
-            text += pq(child).html()
+            for child in pq(result).children():
+                text += pq(child).html()
 
-        print text
+            print text.encode("ascii", "ignore")
+    else:
+        print "No definition for " + word + ".  Did Anthony type this one?"
 
 
 if __name__ == '__main__':
