@@ -6,6 +6,7 @@ Get the definition of a word
 import os
 import sys
 import httplib
+import random
 from pyquery import PyQuery as pq
 
 def main(args):
@@ -20,7 +21,8 @@ def main(args):
         word = "pretentious"
 
     if word == "raja":
-        word = "crybaby"
+        rajaWords = ["crybaby", "woman", "sensitive", "insecure"]
+        word = rajaWords[random.randint(0, len(rajaWords)-1)]
 
     url = "/definition/" + word
 
