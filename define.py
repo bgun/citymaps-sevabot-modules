@@ -12,7 +12,9 @@ def main(args):
     conn = httplib.HTTPConnection("www.dictionaryapi.com")
 
     word = args[0]
-    word = "stupid"
+
+    if word == "anthony":
+        word = "stupid"
 
     url = "/api/v1/references/collegiate/xml/" + word + "?key=673c6f58-cdd8-4d1d-8ba1-4cb5aeebcc2f"
 
