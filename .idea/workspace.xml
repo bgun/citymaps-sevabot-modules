@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47836b5a-a961-4da3-b36e-6a5efd8685ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/define.py" afterPath="$PROJECT_DIR$/define.py" />
     </list>
     <ignored path="citymaps-sevabot-modules.iws" />
@@ -30,7 +28,7 @@
       <file leaf-file-name="define.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/define.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.27027026" vertical-offset="0" max-vertical-offset="825">
+            <state line="24" column="33" selection-start="519" selection-end="519" vertical-scroll-proportion="0.36293435" vertical-offset="78" max-vertical-offset="870">
               <folding>
                 <element signature="e#83#92#0" expanded="true" />
               </folding>
@@ -329,7 +327,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39966694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972524" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972524" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -377,7 +375,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/define.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.27027026" vertical-offset="0" max-vertical-offset="825">
+        <state line="24" column="33" selection-start="519" selection-end="519" vertical-scroll-proportion="0.36293435" vertical-offset="78" max-vertical-offset="870">
           <folding>
             <element signature="e#83#92#0" expanded="true" />
           </folding>
