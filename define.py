@@ -39,7 +39,7 @@ def main(args):
 
             for d in entry.findall("def"):
                 for dt in d.findall("dt"):
-                    if (len(dt.text) > 1):
+                    if (dt.text and len(dt.text) > 1):
                         text = dt.text[1:]
 
                         print "- " + text

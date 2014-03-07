@@ -28,19 +28,10 @@
       <file leaf-file-name="define.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/define.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="33" selection-start="519" selection-end="519" vertical-scroll-proportion="0.36293435" vertical-offset="78" max-vertical-offset="870">
+            <state line="19" column="28" selection-start="354" selection-end="354" vertical-scroll-proportion="0.2857143" vertical-offset="63" max-vertical-offset="870">
               <folding>
                 <element signature="e#83#92#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dice.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dice.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="2376" selection-end="2425" vertical-scroll-proportion="0.0" vertical-offset="1008" max-vertical-offset="1785">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -368,14 +359,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="2376" selection-end="2425" vertical-scroll-proportion="0.0" vertical-offset="1008" max-vertical-offset="1785">
+        <state line="114" column="0" selection-start="2426" selection-end="2426" vertical-scroll-proportion="0.8841699" vertical-offset="1008" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/define.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="33" selection-start="519" selection-end="519" vertical-scroll-proportion="0.36293435" vertical-offset="78" max-vertical-offset="870">
+        <state line="19" column="28" selection-start="354" selection-end="354" vertical-scroll-proportion="0.2857143" vertical-offset="63" max-vertical-offset="870">
           <folding>
             <element signature="e#83#92#0" expanded="true" />
           </folding>
