@@ -19,6 +19,9 @@ def main(args):
     if word == "vegan":
         word = "pretentious"
 
+    if word == "raja":
+        word = "boss"
+
     url = "/api/v1/references/collegiate/xml/" + word + "?key=673c6f58-cdd8-4d1d-8ba1-4cb5aeebcc2f"
 
     conn.request("GET", url)
@@ -44,7 +47,7 @@ def main(args):
 
                         print "- " + text
 
-            i += 1
+            exit()
     else:
         print "No definition found for: " + word
 
