@@ -6,10 +6,11 @@ Get the definition of a word
 import os
 import sys
 import httplib
-import xml.etree.ElementTree as ET
+import random
+from pyquery import PyQuery as pq
 
 def main(args):
-    conn = httplib.HTTPConnection("www.dictionaryapi.com")
+    conn = httplib.HTTPConnection("m.dictionary.com")
 
     word = args[0]
 
@@ -20,36 +21,33 @@ def main(args):
         word = "pretentious"
 
     if word == "raja":
-        word = "boss"
+        rajaWords = ["crybaby", "woman", "sensitive", "insecure"]
+        word = rajaWords[random.randint(0, len(rajaWords)-1)]
 
-    url = "/api/v1/references/collegiate/xml/" + word + "?key=673c6f58-cdd8-4d1d-8ba1-4cb5aeebcc2f"
+    url = "/definition/" + word
 
-    conn.request("GET", url)
+    conn.request("GET", url, None, {
+        "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
+    })
     response = conn.getresponse()
 
-    data = response.read()
+    doc = pq(response.read())
 
-    root = ET.fromstring(data)
+    resultItem = doc.find("#embed_dresultitem_r3")
 
-    if len(root) > 0:
+    if len(resultItem) > 0:
         print "Definition of: " + word
 
-        entries = root.findall("entry")
+        for result in resultItem.children():
+            text = ""
 
-        i = 1
-        for entry in root.findall("entry"):
-            print "\nEntry " + str(i) + ":\n"
+            for child in pq(result).children():
+                text += pq(child).html()
 
-            for d in entry.findall("def"):
-                for dt in d.findall("dt"):
-                    if dt.text and len(dt.text) > 1:
-                        text = dt.text[1:]
-
-                        print "- " + text
-
-            exit()
+            print text.encode("ascii", "ignore")
     else:
-        print "No definition found for: " + word
+        print "No definition for " + word + ".  Did Anthony type this one?"
 
 
 if __name__ == '__main__':
