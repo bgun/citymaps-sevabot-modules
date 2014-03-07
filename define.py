@@ -41,7 +41,7 @@ def main(args):
             for child in pq(result).children():
                 text += pq(child).html()
 
-            print text
+            print text.encode("ascii", "ignore")
     else:
         print "No definition for " + word + ".  Did Anthony type this one?"
 
