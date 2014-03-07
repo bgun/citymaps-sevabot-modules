@@ -34,13 +34,16 @@ def main(args):
 
     resultItem = doc.find("#embed_dresultitem_r3")
 
-    for result in resultItem.children():
-        text = ""
+    if len(resultItem) > 0:
+        for result in resultItem.children():
+            text = ""
 
-        for child in pq(result).children():
-            text += pq(child).html()
+            for child in pq(result).children():
+                text += pq(child).html()
 
-        print text.encode("ascii", "ignore")
+            print text.encode("ascii", "ignore")
+    else:
+        print "No definition for " + word + ".  Did Anthony type this one?"
 
 
 if __name__ == '__main__':
