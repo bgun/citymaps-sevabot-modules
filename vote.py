@@ -250,9 +250,9 @@ def main(args):
 
             question.save()
 
-            print "Vote Initiaiated:\n"
+            print "Vote Initiaiated:"
         else:
-            print "There is already a vote in progress\n"
+            print "There is already a vote in progress:"
 
         print question.question + "\n"
 
