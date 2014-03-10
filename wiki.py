@@ -7,6 +7,6 @@ import os
 import sys
 import urllib
 
-query = " ".join(sys.argv[1:]).trim().replace(" ", "_")
+query = " ".join(sys.argv[1:]).strip().replace(" ", "_")
 
 print "https://en.wikipedia.org/wiki/" + query
