@@ -23,4 +23,4 @@ emoticons = doc.find(".emoteitem .emote")
 
 index = random.randint(0, len(emoticons) - 1)
 
-print pq(emoticons[index]).html()
+print pq(emoticons[index]).html().encode("utf-8")
