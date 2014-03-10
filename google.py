@@ -7,6 +7,6 @@ import os
 import sys
 import urllib
 
-query = urllib.urlencode(" ".join(sys.argv[1:]))
+query = urllib.quote_plus(" ".join(sys.argv[1:]))
 
 print "https://www.google.com/search?q=" + query
