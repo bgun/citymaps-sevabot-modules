@@ -5,4 +5,4 @@ A simple sample module with Skype smileys
 """
 import os
 
-print "I am a teapot. I am a teapot. Blub. Blub. Blub."
+print "Ouch! Maybe this will help: http://bit.ly/1bk0rHa"

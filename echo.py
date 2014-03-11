@@ -3,6 +3,10 @@
 """
 A simple sample module with Skype smileys
 """
-import os
+import sys
 
-print "I am a teapot. I am a teapot. Blub. Blub. Blub."
+text = ""
+for arg in sys.argv[1:]:
+    text += arg + " "
+
+print text.encode("utf-8")

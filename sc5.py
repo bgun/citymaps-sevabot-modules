@@ -5,4 +5,4 @@ A simple sample module with Skype smileys
 """
 import os
 
-print "I am a teapot. I am a teapot. Blub. Blub. Blub."
+print "(talk) Hear ye, hear ye! Anthony just crushed Margot in Soul Calibur 5. That is all. (talk)"
