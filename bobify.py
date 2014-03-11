@@ -20,12 +20,13 @@ words = [
   "core",
   "core-admin",
   "core-api",
-  "play"
+  "play",
+  "dev"
 ]
 
 #first word
 rand = random.randint(0,len(words)-1)
-resp = words[rand]
+resp = words[rand]+str(rand+1)
 
 #interpolate words between all params
 for p in params:
@@ -34,6 +35,6 @@ for p in params:
 
 # finally
 rand = random.randint(0,len(words)-1)
-resp = string.join([resp, words[rand]], '.')
+resp = string.join([resp, words[rand], "citymaps.com"], '.')
 
 print resp
