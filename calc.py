@@ -16,8 +16,16 @@ if len(sys.argv) == 2 and sys.argv[1] == "help":
 # get first 100 arguments in the form of one long string
 params = string.join(sys.argv[1:100], ' ')
 # sanitize. Sorry, no algebra. Also no commas because Python turns it into a list.
-clean = re.sub(r'[a-z,A-Z]','',params).strip()
+clean = re.sub(r'[a-z,A-Z ?]','',params).strip()
 # python power operator is "**", but I prefer "^"
 expr = re.sub(r'\^','**',clean)
 
-print clean + " = " + str(eval(expr))
+result = ""
+try:
+  result = str(eval(expr))
+except ZeroDivisionError:
+  result = "Division by zero."
+except BaseException:
+  result = "I don't understand."
+
+print clean + " = " + result
