@@ -7,12 +7,13 @@ import os
 import sys
 import httplib
 import random
+import urllib
 from pyquery import PyQuery as pq
 
 def main(args):
     conn = httplib.HTTPConnection("m.dictionary.com")
 
-    word = args[0]
+    word = " ".join(args)
 
     if word == "anthony":
         word = "stupid"
@@ -24,7 +25,9 @@ def main(args):
         rajaWords = ["crybaby", "woman", "sensitive", "insecure"]
         word = rajaWords[random.randint(0, len(rajaWords)-1)]
 
-    url = "/definition/" + word
+
+    wordParam = urllib.quote_plus(word)
+    url = "/definition/" + wordParam
 
     conn.request("GET", url, None, {
         "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -47,7 +50,25 @@ def main(args):
 
             print text.encode("utf-8")
     else:
-        print "No definition for " + word + ".  Did Anthony type this one?"
+        conn = httplib.HTTPConnection("www.urbandictionary.com")
+        url = "/define.php?term=" + wordParam
+        conn.request("GET", url, None, {
+            "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
+        })
+
+        print "Definition of: " + word
+
+        response = conn.getresponse()
+
+        doc = pq(response.read())
+
+        meaning = doc.find(".meaning")
+
+        if len(meaning) > 0:
+            print meaning.html().encode("utf-8")
+        else:
+            print "No definition for " + word + ".  Did Anthony type this one?"
 
 
 if __name__ == '__main__':
