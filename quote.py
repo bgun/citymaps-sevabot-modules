@@ -28,7 +28,8 @@ names = {
   "margot"  : "margotquotes",
   "anthony" : "campagnaquotes",
   "campagna": "campagnaquotes",
-  "kanye"   : "kanyewest"
+  "kanye"   : "kanyewest",
+  "jaden"   : "officialjaden"
 }
 
 screen_name = ""
