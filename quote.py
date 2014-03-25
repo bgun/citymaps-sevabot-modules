@@ -23,6 +23,9 @@ api = tweepy.API(auth)
 
 
 name = sys.argv[1]
+tweet_index = None
+if len(sys.argv) > 2:
+  tweet_index = int(sys.argv[2])
 
 names = {
   "margot"  : "margotquotes",
@@ -48,7 +51,11 @@ quotes = []
 for r in results:
   quotes.append(r.text)
 
-rand = random.randint(0,len(quotes)-1)
+if tweet_index == None:
+  tweet_index = random.randint(0,len(quotes)-1)
+
 prefix = "@"+screen_name+": "
 
-print prefix+quotes[rand]
+text = prefix+quotes[tweet_index]
+
+print text.encode("utf-8")
