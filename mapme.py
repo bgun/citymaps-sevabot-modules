@@ -45,4 +45,4 @@ def formatResponse(usermap):
 
 
 if __name__ == '__main__':
-    print formatResponse(getCitymapsUsermap())
+    print formatResponse(getCitymapsUsermap()).encode("utf-8")
