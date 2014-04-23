@@ -7,7 +7,7 @@ This API is deprecated by Google so who knows how long it'll last...
 
 Parameters:
   query - use quotes for multiple words
-  index - from 1 to 8, 8 being the max size of a single page of results
+  index - from 0 to 7, since 8 is the max size of a single page of results
 """
 
 import sys
@@ -29,8 +29,11 @@ index = 0
 if len(sys.argv) > 2:
   try:
     index = int(sys.argv[2])
+    if index > 7:
+      index = 7
   except ValueError:
-    print "Second parameter should be a number from 1 to 8. Use quotes for multi-word searches."
+    print "Second parameter should be a number from 0 to 7. Use quotes for multi-word searches."
+
 
 def getFirstGoogleImageUrl(q):
   url = "http://ajax.googleapis.com/ajax/services/search/images"
