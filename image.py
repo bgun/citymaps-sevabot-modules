@@ -3,6 +3,8 @@
 
 """
 Performs a Google Image search and returns an image URL.
+This API is deprecated by Google so who knows how long it'll last...
+
 Parameters:
   query - use quotes for multiple words
   index - from 1 to 8, 8 being the max size of a single page of results
@@ -29,7 +31,6 @@ if len(sys.argv) > 2:
     index = int(sys.argv[2])
   except ValueError:
     print "Second parameter should be a number from 1 to 8. Use quotes for multi-word searches."
-    index = 0
 
 def getFirstGoogleImageUrl(q):
   url = "http://ajax.googleapis.com/ajax/services/search/images"
