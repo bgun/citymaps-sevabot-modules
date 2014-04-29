@@ -19,11 +19,6 @@ response = conn.getresponse()
 
 doc = pq(response.read())
 
-fortune = pq(doc.find("table p[align='center'] a")[0])
+fortune = pq(doc.find("#message .quote"))
 
-if len(fortune.children()) > 0:
-    print pq(fortune.children()[0]).html().encode("utf-8")
-else:
-    print fortune.html().encode("utf-8")
-
-
+print fortune.text().encode("utf-8")
