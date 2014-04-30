@@ -11,8 +11,6 @@ import urllib
 from pyquery import PyQuery as pq
 
 def main(args):
-
-
     word = " ".join(args)
 
     if word == "anthony":
