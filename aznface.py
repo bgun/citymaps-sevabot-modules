@@ -68,16 +68,19 @@ def main():
 
     emoticons = doc.find(".field-items table td")
 
-    index = random.randint(0, len(emoticons) - 1)
-    html = pq(emoticons[index]).text()
-    if (html and len(html) > 0):
-        html = html.replace("\n", "").strip()
-        # replace possible skype emotes
-        html = html.replace(":)", ": )") \
-            .replace(";)", "; )")
 
-        print html.encode("utf-8")
-        return
+    for i in range(0, 3, 1):
+        index = random.randint(0, len(emoticons) - 1)
+        html = pq(emoticons[index]).text()
+        
+        if (html and len(html) > 0):
+            html = html.replace("\n", "").strip()
+            # replace possible skype emotes
+            html = html.replace(":)", ": )") \
+                .replace(";)", "; )")
+
+            print html.encode("utf-8")
+            return
 
 if __name__ == '__main__':
   main()
