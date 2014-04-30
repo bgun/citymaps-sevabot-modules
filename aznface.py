@@ -73,7 +73,7 @@ def main():
     if (html and len(html) > 0):
         html = re.sub('<[^<]+?>', '', html).replace("\n", "").strip()
         # replace possible skype emotes
-        html.replace(":)", ": )") \
+        html = html.replace(":)", ": )") \
             .replace(";)", "; )")
 
         print html.encode("utf-8")
