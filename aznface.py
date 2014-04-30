@@ -68,10 +68,9 @@ def main():
 
     emoticons = doc.find(".field-items table td")
 
-    #index = random.randint(0, len(emoticons) - 1)
-
-    for emote in emoticons:
-        html = pq(emote).html()
+    while True:
+        index = random.randint(0, len(emoticons) - 1)
+        html = pq(emoticons[index]).html()
         if (html and len(html) > 0):
             html = re.sub('<[^<]+?>', '', html).replace("\n", "").strip()
             #html = html.replace("<!--?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no"\?-->", "")
