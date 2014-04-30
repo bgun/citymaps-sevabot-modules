@@ -8,17 +8,17 @@ import sys
 count = min(int(sys.argv[1]), 10)
 
 flavorText = [
-    "Just no.",
-    "You suck.",
-    "Go home.",
-    "Fail.",
-    "Meh.",
-    "Sigh.",
-    "Try again.",
-    "Not bad",
-    "Good one.",
-    "Nice!",
-    "We have a winner!"
+    "Just no. (puke)",
+    "You suck. (puke)",
+    "Go home. (puke)",
+    "Fail. (puke)",
+    "Meh. (dull)",
+    "Sigh. (dull)",
+    "Try again. (dull)",
+    "Not bad ;)",
+    "Good one. :)",
+    "Nice! :D",
+    "We have a winner! (rofl)"
 ]
 
 text = "I give that a " + str(count) + "/10. " + flavorText[count] + "\n"
