@@ -69,9 +69,9 @@ def main():
     emoticons = doc.find(".field-items table td")
 
     index = random.randint(0, len(emoticons) - 1)
-    html = pq(emoticons[index]).html()
+    html = pq(emoticons[index]).text()
     if (html and len(html) > 0):
-        html = re.sub('<[^<]+?>', '', html).replace("\n", "").strip()
+        html = html.replace("\n", "").strip()
         # replace possible skype emotes
         html = html.replace(":)", ": )") \
             .replace(";)", "; )")
