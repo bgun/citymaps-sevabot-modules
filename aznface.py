@@ -68,15 +68,14 @@ def main():
 
     emoticons = doc.find(".field-items table td")
 
-    while True:
-        index = random.randint(0, len(emoticons) - 1)
-        html = pq(emoticons[index]).html()
-        if (html and len(html) > 0):
-            html = re.sub('<[^<]+?>', '', html).replace("\n", "").strip()
-            #html = html.replace("<!--?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no"\?-->", "")
+    index = random.randint(0, len(emoticons) - 1)
+    html = pq(emoticons[index]).html()
+    if (html and len(html) > 0):
+        html = re.sub('<[^<]+?>', '', html).replace("\n", "").strip()
+        #html = html.replace("<!--?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no"\?-->", "")
 
-            print html.encode("utf-8")
-            return
+        print html.encode("utf-8")
+        return
 
 if __name__ == '__main__':
   main()
