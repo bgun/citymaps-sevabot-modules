@@ -44,7 +44,9 @@ def main(args):
     meaning = doc.find(".meaning")
 
     if len(meaning) > 0:
-        print meaning.text().encode("utf-8")
+        strippedHtml = meaning.html().replace("<br/>", "\n")
+        print pq(strippedHtml).text().encode("utf-8")
+
     else:
         conn = httplib.HTTPConnection("m.dictionary.com")
         url = "/definition/" + wordParam

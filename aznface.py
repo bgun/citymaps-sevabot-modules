@@ -72,7 +72,7 @@ def main():
     for i in range(0, 3, 1):
         index = random.randint(0, len(emoticons) - 1)
         html = pq(emoticons[index]).text()
-        
+
         if (html and len(html) > 0):
             html = html.replace("\n", "").strip()
             # replace possible skype emotes
