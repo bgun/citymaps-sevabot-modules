@@ -10,7 +10,7 @@ count = min(int(sys.argv[1]), 10)
 flavorText = [
     "Just no. (angry)",
     "You suck. (puke)",
-    "Go home. (sleep)",
+    "Go home. |-)",
     "Fail. (doh)",
     "Meh. (dull)",
     "Sigh. (yawn)",
