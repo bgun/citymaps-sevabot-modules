@@ -8,13 +8,13 @@ import sys
 count = min(int(sys.argv[1]), 10)
 
 flavorText = [
-    "Just no. (puke)",
+    "Just no. (angry)",
     "You suck. (puke)",
-    "Go home. (puke)",
-    "Fail. (puke)",
+    "Go home. (sleep)",
+    "Fail. (doh)",
     "Meh. (dull)",
-    "Sigh. (dull)",
-    "Try again. (dull)",
+    "Sigh. (yawn)",
+    "Try again. (speechless)",
     "Not bad ;)",
     "Good one. :)",
     "Nice! :D",
