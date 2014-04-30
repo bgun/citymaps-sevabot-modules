@@ -77,7 +77,11 @@ def main():
             html = html.replace("\n", "").strip()
             # replace possible skype emotes
             html = html.replace(":)", ": )") \
-                .replace(";)", "; )")
+                .replace(";)", "; )") \
+                .replace(":-)", ": -)") \
+                .replace(";-)", "; -)") \
+                .replace(":=)", ": =)") \
+                .replace(";=)", "; =)")
 
             print html.encode("utf-8")
             return
