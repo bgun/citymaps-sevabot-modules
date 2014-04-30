@@ -5,9 +5,23 @@ A simple sample module with Skype smileys
 """
 import sys
 
-count = int(sys.argv[1])
+count = min(int(sys.argv[1]), 10)
 
-text = ""
+flavorText = [
+    "Just no.",
+    "You suck.",
+    "Go home.",
+    "Fail.",
+    "Meh.",
+    "Sigh.",
+    "Try again.",
+    "Not bad",
+    "Good one.",
+    "Nice!",
+    "We have a winner!"
+]
+
+text = "I give that a " + str(count) + "/10. " + flavorText[count] + "\n"
 
 
 for i in range(0, count, 1):
