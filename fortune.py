@@ -6,6 +6,7 @@ Shows a random asian emoticon
 import os
 import httplib
 import random
+import sys
 from pyquery import PyQuery as pq
 
 conn = httplib.HTTPConnection("www.fortunecookiemessage.com")
