@@ -11,6 +11,8 @@ progname = 'lunch'
 
 
 def main(args):
+	print "This is why we can't have nice things..."
+	return
     """The program entry point."""
 
     random.seed()
