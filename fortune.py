@@ -24,4 +24,4 @@ doc = pq(response.read())
 fortune = pq(doc.find("#message .quote"))
 suffix = string.join(sys.argv[1:100], " ")
 
-print (fortune.text() + " " + suffix).encode("utf-8")
+print (fortune.text() + "..." + suffix).encode("utf-8")
