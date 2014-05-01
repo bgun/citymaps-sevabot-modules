@@ -7,6 +7,7 @@ import os
 import httplib
 import random
 import sys
+import string
 from pyquery import PyQuery as pq
 
 conn = httplib.HTTPConnection("www.fortunecookiemessage.com")
