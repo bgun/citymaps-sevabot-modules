@@ -16,8 +16,8 @@ def main(args):
     if word == "anthony":
         word = "stupid"
 
-    if word == "vegan":
-        word = "pretentious"
+    #if word == "vegan":
+    #    word = "pretentious"
 
     if word == "raja":
         rajaWords = ["crybaby", "woman", "sensitive", "insecure"]
