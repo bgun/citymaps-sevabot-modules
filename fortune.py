@@ -21,4 +21,8 @@ doc = pq(response.read())
 
 fortune = pq(doc.find("#message .quote"))
 
-print fortune.text().encode("utf-8")
+if len(args) > 0:
+	args = args.join
+	print (fortune.text() + " " + args).encode("utf-8")
+else:
+	print fortune.text().encode("utf-8")
