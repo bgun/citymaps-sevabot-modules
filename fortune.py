@@ -21,9 +21,6 @@ response = conn.getresponse()
 doc = pq(response.read())
 
 fortune = pq(doc.find("#message .quote"))
+suffix = string.join(sys.argv[1:100], " ")
 
-if len(sys.argv) > 0:
-	args = ' '.join(sys.argv)
-	print (fortune.text() + " " + args).encode("utf-8")
-else:
-	print fortune.text().encode("utf-8")
+print (fortune.text() + " " + suffix).encode("utf-8")
