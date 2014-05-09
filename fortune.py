@@ -6,6 +6,8 @@ Shows a random asian emoticon
 import os
 import httplib
 import random
+import sys
+import string
 from pyquery import PyQuery as pq
 
 conn = httplib.HTTPConnection("www.fortunecookiemessage.com")
@@ -20,5 +22,6 @@ response = conn.getresponse()
 doc = pq(response.read())
 
 fortune = pq(doc.find("#message .quote"))
+suffix = string.join(sys.argv[1:100], " ")
 
-print fortune.text().encode("utf-8")
+print (fortune.text() + "..." + suffix).encode("utf-8")
