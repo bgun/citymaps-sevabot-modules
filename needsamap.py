@@ -89,7 +89,7 @@ else:
   results = twapi.search(rs)
   status  = results[0]
 
-  print "%s\t%s\t%s\t%s" % (status.text, 
-                            status.author.screen_name, 
-                            status.created_at, 
-                            status.source).encode("utf-8")
+  print "%s\n@%s, %s via %s" % (status.text, 
+                                status.author.screen_name, 
+                                status.created_at, 
+                                status.source).encode("utf-8")
