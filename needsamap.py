@@ -38,7 +38,7 @@ class CustomStreamListener(tweepy.StreamListener):
       print "%s\n@%s, %s via %s" % (status.text, 
                                 status.author.screen_name, 
                                 status.created_at, 
-                                status.source,)
+                                status.source).encode("utf-8")
     except Exception, e:
       print >> sys.stderr, 'Encountered Exception:', e
       pass
@@ -89,9 +89,7 @@ else:
   results = twapi.search(rs)
   status  = results[0]
 
-  print "Searching for "+rs
-
   print "%s\t%s\t%s\t%s" % (status.text, 
                             status.author.screen_name, 
                             status.created_at, 
-                            status.source,)
+                            status.source).encode("utf-8")
