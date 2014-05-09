@@ -22,7 +22,15 @@ twapi = tweepy.API(auth)
 streaming = False
 if len(sys.argv) == 2 and sys.argv[1] == "stream":
   streaming = True
-  
+
+
+def render(status):
+  text = "%s\n@%s, %s via %s" % (status.text, 
+                                 status.author.screen_name, 
+                                 status.created_at, 
+                                 status.source)
+  return text.encode("utf-8")
+
 
 class CustomStreamListener(tweepy.StreamListener):
 
@@ -31,19 +39,14 @@ class CustomStreamListener(tweepy.StreamListener):
     # We'll simply print some values in a tab-delimited format
     # suitable for capturing to a flat file but you could opt 
     # store them elsewhere, retweet select statuses, etc.
-    self.render(status)
-
-  def render(self, status):
     try:
-      print "%s\n@%s, %s via %s" % (status.text, 
-                                status.author.screen_name, 
-                                status.created_at, 
-                                status.source).encode("utf-8")
+      print render(status)
+
     except Exception, e:
       print >> sys.stderr, 'Encountered Exception:', e
       pass
 
-    sys.exit()
+    #sys.exit()
 
   def on_error(self, status_code):
     print >> sys.stderr, 'Encountered error with status code:', status_code
@@ -56,22 +59,21 @@ class CustomStreamListener(tweepy.StreamListener):
 
 # Terms to track or search
 track = [
-    "where can i find a",
-    "cheap food",
-    "recommend restaurant"
-    "recommend food",
-    "recommend hotel",
-    "hotel near",
-    "restaurant nyc",
-    "restaurant chicago",
-    "restaurant seattle",
-    "hotel vegas",
-    "recommend nyc",
-    "recommend chicago",
-    "recommend seattle",
-    "recommend vegas",
+    "where can i find a place",
+    "suggest restaurant",
+    "suggest food",
+    "suggest place",
+    "suggest hotel",
+    "help recommend restaurant",
+    "help recommend food",
+    "help recommend place",
+    "help recommend hotel",
+    "restaurant near",
+    "good hotel in",
+    "cheap hotel in",
 ]
 
+# if "stream" is the first parameter, wait for a new tweet using Realtime API instead of searching
 if streaming:
   streaming_api = tweepy.streaming.Stream(auth, CustomStreamListener(), timeout=60)
 
@@ -83,13 +85,18 @@ if streaming:
   streaming_api.filter(follow=None, track=track)
 
 else:
-  r = random.randint(0,len(track)-1)
-  rs = track[r]
+  rand = random.randint(0,len(track)-1)
+  rs = track[rand]
 
   results = twapi.search(rs)
-  status  = results[0]
+  if len(results) > 0:
+    for s in results:
+      if s.text.find("http") == -1 and s.text.find("RT @") == -1:
+        status = s
+        break
 
-  print "%s\n@%s, %s via %s" % (status.text, 
-                                status.author.screen_name, 
-                                status.created_at, 
-                                status.source).encode("utf-8")
+    if status:
+      print render(status)
+
+  else:
+    print "No results found"
