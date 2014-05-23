@@ -33,5 +33,5 @@ try:
             text += "(n)"
 
     print text.encode("utf-8")
-except ValueError:
+except:
     print "Enter a number between 0 and 10, idiot."

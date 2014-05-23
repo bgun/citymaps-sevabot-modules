@@ -10,6 +10,24 @@ import random
 import urllib
 from pyquery import PyQuery as pq
 
+def getResponse(host, url):
+    conn = httplib.HTTPConnection("www.urbandictionary.com")
+
+    conn.request("GET", url, None, {
+        "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
+    })
+
+    response = conn.getresponse()
+
+    redirect = response.getheader("Location", "")
+    if (len(redirect) > 0):
+        url = redirect[redirect.rfind('/'):]
+        return getResponse(host, url)
+
+
+    return response
+
 def main(args):
     word = " ".join(args)
 
@@ -25,19 +43,13 @@ def main(args):
 
 
     wordParam = urllib.quote_plus(word)
-
-    conn = httplib.HTTPConnection("www.urbandictionary.com")
     url = "/define.php?term=" + wordParam
-    conn.request("GET", url, None, {
-        "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
-    })
 
-    print "Definition of: " + word
-
-    response = conn.getresponse()
+    response = getResponse("www.urbandictionary.com", url)
 
     doc = pq(response.read())
+
+    print "Definition of: " + word
 
     meaning = doc.find(".meaning")
 
@@ -46,13 +58,8 @@ def main(args):
         print pq(strippedHtml).text().encode("utf-8")
 
     else:
-        conn = httplib.HTTPConnection("m.dictionary.com")
         url = "/definition/" + wordParam
-        conn.request("GET", url, None, {
-            "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-            "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
-        })
-        response = conn.getresponse()
+        response = getResponse("m.dictionary.com", url)
 
         doc = pq(response.read())
 
