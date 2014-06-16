@@ -9,10 +9,10 @@ import sys
 import httplib
 from pyquery import PyQuery as pq
 
-def main(args):
+def main():
     conn = httplib.HTTPConnection("http://www.yelp.com")
 
-    conn.request("GET", "/search?find_desc="+args[0]+"&find_loc=10065&ns=1#sortby=rating")
+    conn.request("GET", "/search?find_desc="+sys.argv[0]+"&find_loc=10065&ns=1#sortby=rating")
     response = conn.getresponse()
     html = pq(response.read())
 
