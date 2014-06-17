@@ -10,7 +10,7 @@ import httplib
 from pyquery import PyQuery as pq
 
 def main():
-    conn = httplib.HTTPConnection("http://www.yelp.com")
+    conn = httplib.HTTPConnection("www.yelp.com")
 
     url = "/search?find_desc="+sys.argv[0]+"&find_loc=10065&ns=1#sortby=rating"
     
