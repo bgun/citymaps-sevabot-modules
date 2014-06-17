@@ -22,7 +22,7 @@ def main():
     response = conn.getresponse()
     html = pq(response.read())
 
-    print html.find(".biz-name").text().encode("utf-8")
+    print html.find(".biz-name").html().text().encode("utf-8")
 
 if __name__ == '__main__':
     main()
