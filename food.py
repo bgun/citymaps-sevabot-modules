@@ -22,8 +22,7 @@ def main():
     response = conn.getresponse()
     html = pq(response.read())
 
-    print html.find(".search-result-title").text()
-
+    print html.find(".biz-name").text()
 
 if __name__ == '__main__':
     main()
