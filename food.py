@@ -22,7 +22,7 @@ def main():
     response = conn.getresponse()
     html = pq(response.read(), parser ="html")
 
-    print i.text() for i in html.find(".biz-name")
+    print i.text() for i in html.items(".biz-name")
 
 if __name__ == '__main__':
     main()
