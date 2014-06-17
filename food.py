@@ -12,7 +12,7 @@ from pyquery import PyQuery as pq
 def main():
     conn = httplib.HTTPConnection("www.yelp.com")
 
-    url = "/search?find_desc="+sys.argv[0]+"&find_loc=10065&ns=1#sortby=rating"
+    url = "/search?find_desc="+sys.argv[1]+"&find_loc=10065&ns=1#sortby=rating"
     
     conn.request("GET", url, None, {
       "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
