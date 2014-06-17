@@ -20,7 +20,7 @@ def main():
     })
 
     response = conn.getresponse()
-    html = pq(response.read())
+    html = pq(response.read(), parser ='html')
 
     print html.find(".biz-name").html().text().encode("utf-8")
 
