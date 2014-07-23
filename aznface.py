@@ -66,7 +66,7 @@ def main():
 
     doc = pq(response.read())
 
-    emoticons = doc.find(".field-items table td")
+    emoticons = doc.find(".entry-content table td")
 
 
     for i in range(0, 3, 1):
